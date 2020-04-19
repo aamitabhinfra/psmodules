@@ -1,7 +1,7 @@
 # Define external switch name
 $ExternalSwitchName = "ExternalVirtualSwitch"
 
-function Add-External-Switch {
+function Add-ExternalSwitch {
 
     # If the switch does not exists then create it
     $ExternalSwitches = Get-VMSwitch -SwitchType External
@@ -28,11 +28,11 @@ function Add-External-Switch {
     }
 }
 
-function Remove-External-Switch {
+function Remove-ExternalSwitch {
     Remove-VMSwitch $ExternalSwitches -Force
 }
 
-function Remove-External-Switchs {
+function Remove-ExternalSwitchs {
     $ExternalSwitches = Get-VMSwitch -SwitchType External
     foreach($ExternalSwitch in $ExternalSwitches) {
         Remove-VMSwitch $ExternalSwitch.Name -Force
@@ -40,9 +40,6 @@ function Remove-External-Switchs {
 }
 
 Export-ModuleMember -Variable $ExternalSwitchName
-Export-ModuleMember -Function Add-External-Switch
-Export-ModuleMember -Function Remove-External-Switch
-Export-ModuleMember -Function Remove-External-Switchs
-
-
-
+Export-ModuleMember -Function Add-ExternalSwitch
+Export-ModuleMember -Function Remove-ExternalSwitch
+Export-ModuleMember -Function Remove-ExternalSwitchs
