@@ -29,9 +29,8 @@ function Add-ExternalSwitch {
             }
         }
 
-        Write-Host "Info: External switche with different name found" -ForegroundColor Green
-        Remove-ExternalSwitch $ExternalSwitch.Name
-        $CreateSwitch = $true
+        Write-Host "Info: Renaming External Switch from '$($ExternalSwitch.Name)' to '$ExternalSwitchName'" -ForegroundColor Green
+        Rename-VMSwitch $ExternalSwitch.Name -NewName $ExternalSwitchName
     }
 
     # If there is no need to create external switch then done
@@ -49,13 +48,15 @@ function Add-ExternalSwitch {
     # Create a new External Switch
     $NetAdapterName = $NetAdapter.Name
     New-VMSwitch $ExternalSwitchName  -NetAdapterName $NetAdapterName -AllowManagementOS $true
+    return
 }
 
 function Remove-ExternalSwitch {
-    param {
-        [Parameter()]
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory)]
         [string]$SwitchName
-    }
+    )
     Write-Host "Removing switch $SwitchName" -ForegroundColor Green
     Remove-VMSwitch -Name $SwitchName -Force
 }
