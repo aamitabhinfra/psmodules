@@ -1,0 +1,45 @@
+# Base
+git
+sublimetext3
+googlechrome
+syncbackfree
+onenote
+firefox
+windirstat
+rufus
+vscode
+7zip
+winrar
+whatsapp
+zoom-client
+anaconda3
+itunes
+audacity
+ffmpeg
+mediainfo
+spek
+mkvtoolnix
+vlc
+imagemagick
+irfanview
+boxsync
+dropbox
+pdftk
+putty
+
+# Benchmark
+cinebench
+coretemp
+cpu-z
+
+# Lower Priority
+teamviewer9
+nodejs-lts
+jdk8
+discord.install
+discord
+kindle
+calibre
+
+# May not work
+#myharmony
