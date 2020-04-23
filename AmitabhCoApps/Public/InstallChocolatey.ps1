@@ -5,9 +5,7 @@ function Install-Chocolatey {
     #>
     
     # Download script
-    $url = "https://chocolatey.org/install.ps1"
-
-    if(!(test-path "$($env:ProgramData)\chocolatey\choco.exe")) {
+    if($true -or !(test-path "$($env:ProgramData)\chocolatey\choco.exe")) {
         Write-Host "Installing Chocolatey" -ForegroundColor Green
         Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
     }

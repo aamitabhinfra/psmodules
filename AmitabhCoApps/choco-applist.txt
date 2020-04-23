@@ -1,45 +1,53 @@
 # Base
-git
-sublimetext3
-googlechrome
-syncbackfree
-onenote
-firefox
-windirstat
-rufus
-vscode
-7zip
-winrar
-whatsapp
-zoom-client
-anaconda3
-itunes
-audacity
-ffmpeg
-mediainfo
-spek
-mkvtoolnix
-vlc
-imagemagick
-irfanview
-boxsync
-dropbox
-pdftk
-putty
+choco install -y git -params '"/GitAndUnixToolsOnPath"'
+choco install -y pdftk
+choco install -y putty
+choco install -y sublimetext3
+choco install -y googlechrome
+choco install -y syncbackfree
+choco install -y onenote
+choco install -y firefox
+choco install -y windirstat
+choco install -y rufus
+choco install -y vscode
+choco install -y 7zip
+choco install -y winrar
+
+# Coding
+choco install -y anaconda3
+
+# Social, Collab, Audio, Video
+choco install -y whatsapp
+choco install -y zoom-client
+choco install -y itunes
+choco install -y audacity
+choco install -y ffmpeg
+choco install -y mediainfo
+choco install -y spek
+choco install -y mkvtoolnix
+choco install -y vlc
+choco install -y spotify
+
+# Photo
+choco install -y imagemagick
+choco install -y irfanview
+choco install -y boxsync
+choco install -y dropbox
 
 # Benchmark
-cinebench
-coretemp
-cpu-z
+choco install -y cinebench
+choco install -y coretemp
+choco install -y cpu-z
 
 # Lower Priority
-teamviewer9
-nodejs-lts
-jdk8
-discord.install
-discord
-kindle
-calibre
+choco install -y Microsoft-Hyper-V-All -source windowsFeatures
+choco install -y teamviewer
+choco install -y nodejs.install
+choco install -y jdk8
+choco install -y discord.install
+choco install -y discord
+choco install -y kindle
+choco install -y calibre
 
 # May not work
-#myharmony
+# choco install -y myharmony

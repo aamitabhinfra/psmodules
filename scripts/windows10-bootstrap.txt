@@ -1,0 +1,31 @@
+Write-BoxstarterMessage "Setting Execution Policy to Unrestricted and Disabling UAC"
+
+Update-ExecutionPolicy Unrestricted
+Disable-UAC
+
+# WindowsExplorerOptions
+Write-BoxstarterMessage "Explorer Configuration"
+Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions
+Disable-BingSearch
+Set-TaskbarOptions -Size Small -Lock -Dock Bottom -Combine Never
+Enable-RemoteDesktop
+
+
+# .NET 3.5, 4.5, 4.6
+Write-BoxstarterMessage "Downloading and Installing .Net Framework v3.5 then Rebooting if needed."
+choco install DotNet3.5
+Write-BoxstarterMessage "Downloading and Installing .Net Framework v4.5 then Rebooting if needed."
+choco install DotNet4.5
+Write-BoxstarterMessage "Downloading and Installing .Net Framework v4.6 then Rebooting if needed."
+choco install DotNet4.6
+if (Test-PendingReboot) { Invoke-Reboot }
+
+# Hyper-V
+cinst Microsoft-Hyper-V-All -source windowsFeatures
+
+# Shortcut
+Install-ChocolateyPinnedTaskBarItem "$env:windir\system32\mstsc.exe"
+
+Write-BoxstarterMessage "Downloading, Installing Windows Updates then rebooting if needed."
+Install-WindowsUpdate -AcceptEula -GetUpdatesFromMS
+if (Test-PendingReboot) { Invoke-Reboot }
