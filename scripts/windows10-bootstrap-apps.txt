@@ -1,9 +1,15 @@
-# Base
+Write-BoxstarterMessage "Setting Execution Policy to Unrestricted and Disabling UAC"
+
+Update-ExecutionPolicy Unrestricted
+Disable-UAC
+
+Write-BoxstarterMessage "Inatalling Base applciations"
 choco install -y git -params '"/GitAndUnixToolsOnPath"'
-choco install sysinternals
+choco install -y sysinternals
 choco install -y pdftk
 choco install -y putty
-choco install -y sublimetext3
+choco install -y SublimeText3
+choco install SublimeText3.PackageControl -y
 choco install -y googlechrome
 choco install -y syncbackfree
 choco install -y onenote
@@ -14,13 +20,14 @@ choco install -y vscode
 choco install -y 7zip
 choco install -y winrar
 
-# Security
+Write-BoxstarterMessage "Inatalling Security applciations"
 choco install -y 1password
+choco install -y ccleaner
 
-# Coding
+Write-BoxstarterMessage "Inatalling Coding applciations"
 choco install -y anaconda3
 
-# Social, Collab, Audio, Video
+Write-BoxstarterMessage "Inatalling Social, Collab, Audio, Video applciations"
 choco install -y whatsapp
 choco install -y zoom-client
 choco install -y itunes
@@ -32,19 +39,23 @@ choco install -y spek
 choco install -y mkvtoolnix
 choco install -y vlc
 choco install -y spotify
+choco install -y discord
 
-# Photo
-choco install -y imagemagick
-choco install -y irfanview
+Write-BoxstarterMessage "Inatalling Cloud drives"
+choco install -y googledrive
 choco install -y boxsync
 choco install -y dropbox
 
-# Benchmark
+Write-BoxstarterMessage "Inatalling Photo applciations"
+choco install -y imagemagick
+choco install -y irfanview
+
+Write-BoxstarterMessage "Inatalling benchmark applciations"
 choco install -y cinebench
 choco install -y coretemp
 choco install -y cpu-z
 
-# WSL & VMs
+Write-BoxstarterMessage "Inatalling WSL & Hyper-V, vagrant"
 choco install -y Microsoft-Hyper-V-All -source windowsFeatures
 choco install vagrant
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
@@ -54,7 +65,7 @@ Ubuntu1804 install --root
 Ubuntu1804 run apt update
 Ubuntu1804 run apt upgrade
 
-# Lower Priority
+Write-BoxstarterMessage "Inatalling Low Priority applciations"
 choco install -y teamviewer
 choco install -y nodejs.install
 choco install -y jdk8
@@ -65,3 +76,5 @@ choco install -y calibre
 
 # May not work
 # choco install -y myharmony
+
+Enable-UAC
