@@ -3,6 +3,10 @@ Write-BoxstarterMessage "Setting Execution Policy to Unrestricted and Disabling 
 Update-ExecutionPolicy Unrestricted
 Disable-UAC
 
+###################
+# Explorer Settings
+###################
+
 # WindowsExplorerOptions
 Write-BoxstarterMessage "Explorer Configuration"
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions
@@ -10,6 +14,44 @@ Disable-BingSearch
 Set-TaskbarOptions -Size Small -Lock -Dock Bottom -Combine Never
 Enable-RemoteDesktop
 
+##################
+# Privacy Settings
+##################
+
+# Privacy: Let apps use my advertising ID: Disable
+Write-BoxstarterMessage "Disable Advertizing ID"
+If (-Not (Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\AdvertisingInfo")) {
+    New-Item -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\AdvertisingInfo | Out-Null
+}
+Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\AdvertisingInfo -Name Enabled -Type DWord -Value 0
+
+# Privacy: SmartScreen Filter for Store Apps: Disable
+If (-Not (Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppHost")) {
+    New-Item -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppHost | Out-Null
+}
+Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppHost -Name EnableWebContentEvaluation -Type DWord -Value 0
+
+# Disable Telemetry (requires a reboot to take effect)
+# Note this may break Insider builds for your organization
+# Set-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection -Name AllowTelemetry -Type DWord -Value 0
+# Get-Service DiagTrack,Dmwappushservice | Stop-Service | Set-Service -StartupType Disabled
+
+# Activity Tracking: Disable
+@('EnableActivityFeed','PublishUserActivities','UploadUserActivities') |% { Set-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\System -Name $_ -Type DWord -Value 0 }
+
+# These make "Quick Access" behave much closer to the old "Favorites"
+# Disable Quick Access: Recent Files
+Write-BoxstarterMessage "Folder Quick Access Setup"
+Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer -Name ShowRecent -Type DWord -Value 0
+# Disable Quick Access: Frequent Folders
+Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer -Name ShowFrequent -Type DWord -Value 0
+
+# Turn off People in Taskbar
+Write-BoxstarterMessage "Turn off People in Taskbar"
+If (-Not (Test-Path "HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People")) {
+    New-Item -Path HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People | Out-Null
+}
+Set-ItemProperty -Path "HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" -Name PeopleBand -Type DWord -Value 0
 
 # .NET 3.5, 4.5, 4.6
 Write-BoxstarterMessage "Downloading and Installing .Net Framework v3.5 then Rebooting if needed."
