@@ -3,6 +3,11 @@ Write-BoxstarterMessage "Setting Execution Policy to Unrestricted and Disabling 
 Update-ExecutionPolicy Unrestricted
 Disable-UAC
 
+# Allow unattended reboots
+$Boxstarter.RebootOk=$true
+$Boxstarter.NoPassword=$false
+$Boxstarter.AutoLogin=$true
+
 ############################
 # Personal Preferences on UI
 ############################
@@ -132,3 +137,10 @@ Write-BoxstarterMessage "Downloading, Installing Windows Updates then rebooting 
 Enable-UAC
 Install-WindowsUpdate -AcceptEula -GetUpdatesFromMS
 if (Test-PendingReboot) { Invoke-Reboot }
+
+# Cleanup
+Write-BoxstarterMessage "Perform install cleanup."
+del C:\eula*.txt
+del C:\install.*
+del C:\vcredist.*
+del C:\vc_red.*
