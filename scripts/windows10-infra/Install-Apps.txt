@@ -3,11 +3,6 @@ Write-BoxstarterMessage "Setting Execution Policy to Unrestricted and Disabling 
 Update-ExecutionPolicy Unrestricted
 Disable-UAC
 
-Write-BoxstarterMessage "Inatalling Git Bash"
-choco install -y git -params '"/GitAndUnixToolsOnPath"'
-refreshenv
-# TODO: Setup .bashrc environment variables
-
 Write-BoxstarterMessage "Inatalling Base applciations"
 choco install -y sysinternals
 choco install -y pdftk

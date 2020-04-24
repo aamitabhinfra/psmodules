@@ -1,12 +1,12 @@
 Write-BoxstarterMessage "Setting Execution Policy to Unrestricted and Disabling UAC"
-
 Update-ExecutionPolicy Unrestricted
 Disable-UAC
 
 # Allow unattended reboots
-$Boxstarter.RebootOk=$true
-$Boxstarter.NoPassword=$false
-$Boxstarter.AutoLogin=$true
+# Write-BoxstarterMessage "Setup flags: reboot, no password, auto login"
+# $Boxstarter.RebootOk=$true
+# $Boxstarter.NoPassword=$false
+# $Boxstarter.AutoLogin=$true
 
 ############################
 # Personal Preferences on UI
@@ -122,13 +122,13 @@ foreach ($app in $applicationList) {
 }
 
 # .NET 3.5, 4.5, 4.6
-Write-BoxstarterMessage "Downloading and Installing .Net Framework v3.5 then Rebooting if needed."
-choco install DotNet3.5
-Write-BoxstarterMessage "Downloading and Installing .Net Framework v4.5 then Rebooting if needed."
-choco install DotNet4.5
-Write-BoxstarterMessage "Downloading and Installing .Net Framework v4.6 then Rebooting if needed."
-choco install DotNet4.6
-if (Test-PendingReboot) { Invoke-Reboot }
+# Write-BoxstarterMessage "Downloading and Installing .Net Framework v3.5 then Rebooting if needed."
+# choco install DotNet3.5
+# Write-BoxstarterMessage "Downloading and Installing .Net Framework v4.5 then Rebooting if needed."
+# choco install DotNet4.5
+# Write-BoxstarterMessage "Downloading and Installing .Net Framework v4.6 then Rebooting if needed."
+# choco install DotNet4.6
+# if (Test-PendingReboot) { Invoke-Reboot }
 
 # Shortcut
 Install-ChocolateyPinnedTaskBarItem "$env:windir\system32\mstsc.exe"
