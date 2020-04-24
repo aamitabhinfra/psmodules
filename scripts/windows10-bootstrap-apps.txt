@@ -3,8 +3,12 @@ Write-BoxstarterMessage "Setting Execution Policy to Unrestricted and Disabling 
 Update-ExecutionPolicy Unrestricted
 Disable-UAC
 
-Write-BoxstarterMessage "Inatalling Base applciations"
+Write-BoxstarterMessage "Inatalling Git Bash"
 choco install -y git -params '"/GitAndUnixToolsOnPath"'
+refreshenv
+# TODO: Setup .bashrc environment variables
+
+Write-BoxstarterMessage "Inatalling Base applciations"
 choco install -y sysinternals
 choco install -y pdftk
 choco install -y putty
@@ -23,6 +27,9 @@ choco install -y winrar
 Write-BoxstarterMessage "Inatalling Security applciations"
 choco install -y 1password
 choco install -y ccleaner
+
+Write-BoxstarterMessage "Inatalling Productivity applciations"
+choco install -y adobereader
 
 Write-BoxstarterMessage "Inatalling Coding applciations"
 choco install -y anaconda3
@@ -69,6 +76,7 @@ Write-BoxstarterMessage "Inatalling Low Priority applciations"
 choco install -y teamviewer
 choco install -y nodejs.install
 choco install -y jdk8
+# choco install -y jre8
 choco install -y discord.install
 choco install -y discord
 choco install -y kindle
