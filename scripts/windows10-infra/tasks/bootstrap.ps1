@@ -18,7 +18,7 @@ Set-ExecutionPolicy Unrestricted -Scope Process -Force
 # Services requirements
 ###############################
 
-Write-Host "Enable Services for Network Discovery and File Sharing" -ForegroundColor Green
+Write-Host "Enable Services for Network Discovery and File Sharing" -ForegroundColor Yellow
 if (!(Get-Service -DisplayName "Function Discovery Resource Publication")) {
     Get-Service -DisplayName "Function Discovery Resource Publication" | Start-Service
 }
@@ -35,11 +35,11 @@ if (!(Get-Service -DisplayName "UPnP Device Host")) {
 ###############################
 # Firewall requirements
 ###############################
-Write-Host "Enable firewall for Network Discovery" -ForegroundColor Green
+Write-Host "Enable firewall for Network Discovery" -ForegroundColor 
 Get-NetFirewallRule -DisplayGroup "Network Discovery" | Set-NetFirewallRule -Action Allow
 Get-NetFirewallRule -DisplayGroup "Network Discovery" | Enable-NetFirewallRule
 
-Write-Host "Enable firewall for File Sharing" -ForegroundColor Green
+Write-Host "Enable firewall for File Sharing" -ForegroundColor Yellow
 Get-NetFirewallRule -DisplayGroup "File and Printer Sharing" | Set-NetFirewallRule -Action Allow 
 Get-NetFirewallRule -DisplayGroup "File and Printer Sharing" | Enable-NetFirewallRule
 
