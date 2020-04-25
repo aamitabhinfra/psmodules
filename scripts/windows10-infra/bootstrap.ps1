@@ -48,14 +48,26 @@ Get-NetFirewallRule -DisplayGroup "File and Printer Sharing" | Enable-NetFirewal
 ###############################
 Write-BoxstarterMessage "Inatalling Git Bash"
 choco install -y git -params '"/GitAndUnixToolsOnPath"'
+
+# Add git path to environment
+$gitinpath = $env:path.split(";") | Select-String -Pattern git | Select-String -Pattern "program Files"
+if (!($gitinpath)) {
+    $env:path="$env:path;C:\Program Files\Git\cmd"
+}
 refreshenv
 # TODO: Setup .bashrc environment variables
 
-# Copy .ssh keys from host
-
+# TODO: Copy .ssh keys from host
 
 # TODO: pull down the Boxter git repo
-if (-not (Test-Path "$home\source\repos\infra")) {
-    New-Item -Path $home\source\repos -ItemType Directory
+$repos = "$home\source\repos"
+if (-not (Test-Path "$repos\infra")) {
+    New-Item -Path "$repos\infra" -ItemType Directory
 }
-# (cd $home\source\repos; git clone 
+if (!(Test-Path "$repos\infra\psmodule")) {
+    Set-Location "$repos\infra"
+    git clone "git@github.com:aamitabhinfra/psmodules.git"
+} else {
+    Set-Location "$repos\infra\psmodules"
+    git fetch
+}

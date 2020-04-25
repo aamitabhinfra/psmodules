@@ -1,0 +1,12 @@
+# Configure a vanilla Windows 10 environment
+
+## bootstrap:
+The script will install _Boxstarter_, _Chocolatey_, _Setup Network Discovery_ and _File Sharing_, _Git_, and download the main _"psmodule"_ Git repo
+1. Open powershell in admin mode and execute the following command:
+   ```powershell
+   Set-ExecutionPolicy Unrestricted -Scope Process -Force
+   ```
+2. Execute file <span style="color:green">". \bootstrap.ps1"</span>
+
+# base installation
+Setup _ExplorerOptions_, _UI_, _Privacy_, _Remove Microsoft junk_, _Update Windows_
