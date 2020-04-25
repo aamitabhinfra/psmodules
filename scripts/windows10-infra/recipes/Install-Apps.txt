@@ -23,8 +23,8 @@ Write-BoxstarterMessage "Inatalling Security applciations"
 # choco install -y 1password
 choco install -y ccleaner
 
-# Write-BoxstarterMessage "Inatalling Productivity applciations"
-# choco install -y adobereader
+Write-BoxstarterMessage "Inatalling Productivity applciations"
+choco install -y adobereader
 
 Write-BoxstarterMessage "Inatalling Coding applciations"
 choco install -y anaconda3
