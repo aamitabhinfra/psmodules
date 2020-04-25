@@ -9,7 +9,7 @@ Open powershell in admin mode and execute the following commands:
    Set-ExecutionPolicy Unrestricted -Scope Process -Force
    ```
 
-## Recipe: K2FHPC: Use _recipe-allapps.ps1_
+## Recipe: K2FHPC: Uses _recipe-allapps.ps1_
 This recipe installs all packages.
    ```powershell
    Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-allapps.ps1'))

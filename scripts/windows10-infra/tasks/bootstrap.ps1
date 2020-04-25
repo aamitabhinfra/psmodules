@@ -37,10 +37,11 @@ if (!(Get-Service -DisplayName "UPnP Device Host")) {
     Get-Service -DisplayName "UPnP Device Host" | Start-Service
 }
 
-###############################
-# Firewall requirements
-###############################
-Write-Host "Enable firewall for Network Discovery" -ForegroundColor 
+Write-Host "#####################################################" -ForegroundColor Yellow
+Write-Host "Firewall requirements" -ForegroundColor Yellow
+Write-Host "#####################################################" -ForegroundColor Yellow
+
+Write-Host "Enable firewall for Network Discovery" -ForegroundColor Yellow
 Get-NetFirewallRule -DisplayGroup "Network Discovery" | Set-NetFirewallRule -Action Allow
 Get-NetFirewallRule -DisplayGroup "Network Discovery" | Enable-NetFirewallRule
 
