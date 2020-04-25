@@ -1,0 +1,14 @@
+Write-BoxstarterMessage "Setting Execution Policy to Unrestricted and Disabling UAC"
+
+Update-ExecutionPolicy Unrestricted
+Disable-UAC
+
+Write-BoxstarterMessage "Inatalling WSL & Hyper-V, vagrant"
+choco install -y Microsoft-Hyper-V-All -source windowsFeatures
+choco install vagrant
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
+Add-AppxPackage -Path ~/Ubuntu.appx
+RefreshEnv
+Ubuntu1804 install --root
+Ubuntu1804 run apt update
+Ubuntu1804 run apt upgrade

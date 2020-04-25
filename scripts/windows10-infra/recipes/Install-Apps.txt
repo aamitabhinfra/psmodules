@@ -18,15 +18,15 @@ choco install -y rufus
 choco install -y vscode
 choco install -y 7zip
 choco install -y winrar
+choco install -y ccleaner
 
 Write-BoxstarterMessage "Inatalling Security applciations"
 # choco install -y 1password
-choco install -y ccleaner
 
 Write-BoxstarterMessage "Inatalling Productivity applciations"
 choco install -y adobereader
 
-Write-BoxstarterMessage "Inatalling Coding applciations"
+Write-BoxstarterMessage "Inatalling software development applciations"
 choco install -y anaconda3
 
 Write-BoxstarterMessage "Inatalling Social, Collab, Audio, Video applciations"
