@@ -9,4 +9,15 @@ The script will install _Boxstarter_, _Chocolatey_, _Setup Network Discovery_ an
 2. Execute file <span style="color:green">". \bootstrap.ps1"</span>
 
 # base installation
-Setup _ExplorerOptions_, _UI_, _Privacy_, _Remove Microsoft junk_, _Update Windows_
+Sets up _ExplorerOptions_, _UI_, _Privacy_, _Remove Microsoft junk_, _Update Windows_
+   
+   Execute the following command
+   ```powershell
+   Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/Install-Base.txt
+   ```
+
+## apps install
+Execute the following command
+   ```powershell
+   Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/Install-Apps.txt
+   ```
