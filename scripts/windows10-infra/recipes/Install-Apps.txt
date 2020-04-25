@@ -79,5 +79,12 @@ choco install -y calibre
 
 # May not work
 # choco install -y myharmony
+# choco install -y Bandicam
+# choco install -y Capture NX 2
+# choco install -y dbpoweramp
+# choco install -y epson scan
+# choco install -y geosetter
+# choco install -y harmony remote
+# choco install -y picasa3
 
 Enable-UAC

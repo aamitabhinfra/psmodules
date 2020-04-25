@@ -7,7 +7,8 @@ function Install-Chocolatey {
     # Download script
     if($true -or !(test-path "$($env:ProgramData)\chocolatey\choco.exe")) {
         Write-Host "Installing Chocolatey" -ForegroundColor Green
-        Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+        Set-ExecutionPolicy Bypass -Scope Process -Force
+        Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
     }
     else {
         Write-Host "Chocolatey is already installed" -ForegroundColor Green
