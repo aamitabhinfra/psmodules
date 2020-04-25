@@ -1,9 +1,14 @@
 #Requires -RunAsAdministrator
 
+##################################################
+# The script will install Boxstarter, Chocolatey,
+# Setup Network Discovery and File Sharing, Git,
+# and download the main "psmodule" Git repo
+##################################################
+
 ###############################
 # Elevate permissions
 ###############################
-
 # Open PowerShell command with Admin priviledges
 # Paste the below line in the shell and execute it
 # Then run this script again
