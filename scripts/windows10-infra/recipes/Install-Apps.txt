@@ -8,10 +8,10 @@ choco install -y sysinternals
 choco install -y pdftk
 choco install -y putty
 choco install -y SublimeText3
-choco install SublimeText3.PackageControl -y
+# choco install -y SublimeText3.PackageControl
 choco install -y googlechrome
 choco install -y syncbackfree
-choco install -y onenote
+# choco install -y onenote
 choco install -y firefox
 choco install -y windirstat
 choco install -y rufus
@@ -20,11 +20,11 @@ choco install -y 7zip
 choco install -y winrar
 
 Write-BoxstarterMessage "Inatalling Security applciations"
-choco install -y 1password
+# choco install -y 1password
 choco install -y ccleaner
 
-Write-BoxstarterMessage "Inatalling Productivity applciations"
-choco install -y adobereader
+# Write-BoxstarterMessage "Inatalling Productivity applciations"
+# choco install -y adobereader
 
 Write-BoxstarterMessage "Inatalling Coding applciations"
 choco install -y anaconda3

@@ -11,15 +11,14 @@ Open powershell in admin mode and execute the following commands:
    ```
 
 ## Base installation
-Sets up _ExplorerOptions_, _UI_, _Privacy_, _Remove Microsoft junk_, _Update Windows_
-   
-   Execute the following command
+Sets up _ExplorerOptions_, _UI_, _Privacy_, _Remove Microsoft junk_, _Update Windows_.
+   Execute the following command:
    ```powershell
    Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/Install-Base.txt
    ```
 
 ## Apps installation
-Execute the following command
+Execute the following command:
    ```powershell
    Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/Install-Apps.txt
    ```
