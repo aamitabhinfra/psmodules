@@ -25,3 +25,11 @@ Open powershell in admin mode and execute the following commands:
    ```powershell
    Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-k2fhpc.ps1'))
    ```
+
+## Recipe: ML as testing ground
+This recipe installs all packages.  Execute the following PowerShell commands in the Administrator mode
+
+Open powershell in admin mode and execute the following commands:
+   ```powershell
+   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-ml.ps1'))
+   ```

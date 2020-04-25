@@ -19,12 +19,10 @@ choco install -y vscode
 choco install -y 7zip
 choco install -y winrar
 choco install -y ccleaner
+choco install -y adobereader
 
 Write-BoxstarterMessage "Inatalling Security applciations"
 # choco install -y 1password
-
-Write-BoxstarterMessage "Inatalling Productivity applciations"
-choco install -y adobereader
 
 Write-BoxstarterMessage "Inatalling software development applciations"
 choco install -y anaconda3
@@ -56,16 +54,6 @@ Write-BoxstarterMessage "Inatalling benchmark applciations"
 choco install -y cinebench
 choco install -y coretemp
 choco install -y cpu-z
-
-Write-BoxstarterMessage "Inatalling WSL & Hyper-V, vagrant"
-choco install -y Microsoft-Hyper-V-All -source windowsFeatures
-choco install vagrant
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
-Add-AppxPackage -Path ~/Ubuntu.appx
-RefreshEnv
-Ubuntu1804 install --root
-Ubuntu1804 run apt update
-Ubuntu1804 run apt upgrade
 
 Write-BoxstarterMessage "Inatalling Low Priority applciations"
 choco install -y teamviewer
