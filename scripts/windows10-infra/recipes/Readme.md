@@ -8,7 +8,7 @@ Open powershell in admin mode and execute the following commands:
    ```powershell
    Set-ExecutionPolicy Unrestricted -Scope Process -Force
 
-   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/bootstrap.ps1'))
+   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/tasks/bootstrap.ps1'))
    ```
 
 ## Base installation
