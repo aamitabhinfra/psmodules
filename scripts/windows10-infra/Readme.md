@@ -6,7 +6,10 @@ The script will install _Boxstarter_, _Chocolatey_, _Setup Network Discovery_ an
    ```powershell
    Set-ExecutionPolicy Unrestricted -Scope Process -Force
    ```
-2. Execute file <span style="color:green">". \bootstrap.ps1"</span>
+2. Execute command:
+   ```powershell
+   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/bootstrap.ps1'))
+   ```
 
 ## base installation
 Sets up _ExplorerOptions_, _UI_, _Privacy_, _Remove Microsoft junk_, _Update Windows_
