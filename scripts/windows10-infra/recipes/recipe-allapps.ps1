@@ -1,21 +1,21 @@
-Write-Host "-----------------------------------------" -Foreground Yellow
-Write-Host "Install bootstrap: Boxstarter/Choco, etc." -Foreground Yellow
-Write-Host "-----------------------------------------" -Foreground Yellow
+Write-Host "-----------------------------------------" -ForegroundColor Yellow
+Write-Host "Install bootstrap: Boxstarter/Choco, etc." -ForegroundColor Yellow
+Write-Host "-----------------------------------------" -ForegroundColor Yellow
 Set-ExecutionPolicy Unrestricted -Scope Process -Force
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/tasks/bootstrap.ps1'))
 
-Write-Host "----------------------------" -Foreground Yellow
-Write-Host "Install base applicaitons" -Foreground Yellow
-Write-Host "----------------------------" -Foreground Yellow
+Write-Host "----------------------------" -ForegroundColor Yellow
+Write-Host "Install base applicaitons" -ForegroundColor Yellow
+Write-Host "----------------------------" -ForegroundColor Yellow
 Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/tasks/Install-Base.txt
 
-Write-Host "-----------------------------" -Foreground Yellow
-Write-Host "Install Applicaitons" -Foreground Yellow
-Write-Host "-----------------------------" -Foreground Yellow
+Write-Host "-----------------------------" -ForegroundColor Yellow
+Write-Host "Install Applicaitons" -ForegroundColor Yellow
+Write-Host "-----------------------------" -ForegroundColor Yellow
 
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 Write-BoxstarterMessage "Inatalling WSL & Hyper-V, vagrant"
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y Microsoft-Hyper-V-All -source windowsFeatures
 choco install vagrant
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
@@ -25,9 +25,9 @@ Ubuntu1804 install --root
 Ubuntu1804 run apt update
 Ubuntu1804 run apt upgrade
 
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 Write-BoxstarterMessage "Inatalling Base applciations"
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y sysinternals
 choco install -y pdftk
 choco install -y putty
@@ -45,19 +45,19 @@ choco install -y winrar
 choco install -y ccleaner
 choco install -y adobereader
 
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 Write-BoxstarterMessage "Inatalling Security applciations"
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 # choco install -y 1password
 
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 Write-BoxstarterMessage "Inatalling software development applciations"
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y anaconda3
 
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 Write-BoxstarterMessage "Inatalling Social, Collab, Audio, Video applciations"
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y whatsapp
 choco install -y zoom-client
 choco install -y itunes
@@ -71,29 +71,29 @@ choco install -y vlc
 choco install -y spotify
 choco install -y discord
 
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 Write-BoxstarterMessage "Inatalling Cloud drives"
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y googledrive
 choco install -y boxsync
 choco install -y dropbox
 
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 Write-BoxstarterMessage "Inatalling Photo applciations"
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y imagemagick
 choco install -y irfanview
 
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 Write-BoxstarterMessage "Inatalling benchmark applciations"
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y cinebench
 choco install -y coretemp
 choco install -y cpu-z
 
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 Write-BoxstarterMessage "Inatalling Low Priority applciations"
-Write-Host "------------------------------------------------------------" -Foreground Yellow
+Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y teamviewer
 choco install -y nodejs.install
 choco install -y jdk8
