@@ -1,7 +1,7 @@
 # Define external switch name
-$ExternalSwitchName = "ExternalVirtualSwitch"
+$AcoExternalSwitchName = "ExternalVirtualSwitch"
 
-function Add-ExternalSwitch {
+function Add-AcoExternalSwitch {
 
     # Detect if switch does not pre-exist
     $ExternalSwitches = Get-VMSwitch -SwitchType External
@@ -23,14 +23,14 @@ function Add-ExternalSwitch {
     # Check if switch exist with the same name
     else {
         foreach ($ExternalSwitch in $ExternalSwitches) {
-            if ($ExternalSwitch.Name -eq $ExternalSwitchName) {
+            if ($ExternalSwitch.Name -eq $AcoExternalSwitchName) {
                 Write-Host "Info: External switche AREADY exists. Done" -ForegroundColor Green
                 return
             }
         }
 
-        Write-Host "Info: Renaming External Switch from '$($ExternalSwitch.Name)' to '$ExternalSwitchName'" -ForegroundColor Green
-        Rename-VMSwitch $ExternalSwitch.Name -NewName $ExternalSwitchName
+        Write-Host "Info: Renaming External Switch from '$($ExternalSwitch.Name)' to '$AcoExternalSwitchName'" -ForegroundColor Green
+        Rename-VMSwitch $ExternalSwitch.Name -NewName $AcoExternalSwitchName
     }
 
     # If there is no need to create external switch then done
@@ -47,11 +47,11 @@ function Add-ExternalSwitch {
 
     # Create a new External Switch
     $NetAdapterName = $NetAdapter.Name
-    New-VMSwitch $ExternalSwitchName  -NetAdapterName $NetAdapterName -AllowManagementOS $true
+    New-VMSwitch $AcoExternalSwitchName  -NetAdapterName $NetAdapterName -AllowManagementOS $true
     return
 }
 
-function Remove-ExternalSwitch {
+function Remove-AcoExternalSwitch {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory)]
@@ -61,14 +61,14 @@ function Remove-ExternalSwitch {
     Remove-VMSwitch -Name $SwitchName -Force
 }
 
-function Remove-ExternalSwitchs {
+function Remove-AcoExternalSwitchs {
     $ExternalSwitches = Get-VMSwitch -SwitchType External
     foreach($ExternalSwitch in $ExternalSwitches) {
         Remove-VMSwitch $ExternalSwitch.Name -Force
     }
 }
 
-Export-ModuleMember -Variable $ExternalSwitchName
-Export-ModuleMember -Function Add-ExternalSwitch
-Export-ModuleMember -Function Remove-ExternalSwitch
-Export-ModuleMember -Function Remove-ExternalSwitchs
+Export-ModuleMember -Variable $AcoExternalSwitchName
+Export-ModuleMember -Function Add-AcoExternalSwitch
+Export-ModuleMember -Function Remove-AcoExternalSwitch
+Export-ModuleMember -Function Remove-AcoExternalSwitchs
