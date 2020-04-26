@@ -1,4 +1,5 @@
 # Reference: https://mcpmag.com/articles/2017/03/09/creating-a-vm-in-hyperv-using-ps.aspx
+# Reference: https://www.altaro.com/hyper-v/customize-vm-powershell/
 
 function New-AcoVM {
 
