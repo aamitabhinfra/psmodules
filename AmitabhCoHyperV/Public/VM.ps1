@@ -1,12 +1,14 @@
+# Reference: https://mcpmag.com/articles/2017/03/09/creating-a-vm-in-hyperv-using-ps.aspx
+
 function New-AcoVM {
 
     [CmdletBinding()]
     param(
         [Parameter(Mandatory)]
-        [string]$VMName,
+        [string]$Name,
 
         [Parameter(Mandatory=$false)]
-        [string]$RAM = 8GB,
+        [Int64]$RAM = 8GB, # Gitabyter
 
         [Parameter(Mandatory=$false)]
         [int]$CPU = 2,
@@ -19,8 +21,8 @@ function New-AcoVM {
     # Useful code snippet
     # Get-VMHost | fl *
 
-    $VMPath = ((Get-VMHost | Select-Object VirtualMachinePath).VirtualMachinePath) + $VMName
-    $VHDPath = $VMPath + "\" + $VMName + ".vhdx"
+    $VMPath = ((Get-VMHost | Select-Object VirtualMachinePath).VirtualMachinePath) + $Name
+    $VHDPath = $VMPath + "\" + $Name + ".vhdx"
 
     $ExternalSwitches = Get-VMSwitch -SwitchType External
     if (!($ExternalSwitches)) {
@@ -28,22 +30,22 @@ function New-AcoVM {
         return
     }
 
-    New-VM -Name $VMName `
+    New-VM -Name $Name `
         -SwitchName $ExternalSwitches.Name `
         -MemoryStartupBytes $RAM `
         -NewVHDPath $VHDPath `
         -NewVHDSizeBytes 60GB
 
-    Set-VM -VMName $VMName `
+    Set-VM -VMName $Name `
         -MemoryStartupBytes $RAM `
         -ProcessorCount $CPU `
         -StaticMemory
     
     if ($ISO) {
-        Set-VMDvdDrive -VMName $VMName -Path $ISO
+        Set-VMDvdDrive -VMName $Name -Path $ISO
     }
 
-    # Start-VM -Name $VMName
+    # Start-VM -Name $Name
 }
 
 Export-ModuleMember -Function New-AcoVM
