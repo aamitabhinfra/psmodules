@@ -45,3 +45,5 @@ function New-AcoVM {
 
     # Start-VM -Name $VMName
 }
+
+Export-ModuleMember -Function New-AcoVM
