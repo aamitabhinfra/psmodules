@@ -49,13 +49,14 @@ Write-Host "Enable firewall for File Sharing" -ForegroundColor Yellow
 Get-NetFirewallRule -DisplayGroup "File and Printer Sharing" | Set-NetFirewallRule -Action Allow 
 Get-NetFirewallRule -DisplayGroup "File and Printer Sharing" | Enable-NetFirewallRule
 
-###############################
-# Git Setup
-###############################
-Write-BoxstarterMessage "Inatalling Git Bash"
+Write-Host "#####################################################" -ForegroundColor Yellow
+Write-Host "Git Bash Setup" -ForegroundColor Yellow
+Write-Host "#####################################################" -ForegroundColor Yellow
 choco install -y git -params '"/GitAndUnixToolsOnPath"'
 
-# Add git path to environment
+Write-Host "#####################################################" -ForegroundColor Yellow
+Write-Host "Add git path to environment" -ForegroundColor Yellow
+Write-Host "#####################################################" -ForegroundColor Yellow
 $gitinpath = $env:path.split(";") | Select-String -Pattern git | Select-String -Pattern "program Files"
 if (!($gitinpath)) {
     $env:path="$env:path;C:\Program Files\Git\cmd"
@@ -65,7 +66,9 @@ refreshenv
 
 # TODO: Copy .ssh keys from host
 
-# TODO: pull down the Boxter git repo
+Write-Host "#####################################################" -ForegroundColor Yellow
+Write-Host "Pull down psmodule repo" -ForegroundColor Yellow
+Write-Host "#####################################################" -ForegroundColor Yellow
 $repos = "$home\source\repos"
 if (-not (Test-Path "$repos\infra")) {
     New-Item -Path "$repos\infra" -ItemType Directory
@@ -77,3 +80,4 @@ if (!(Test-Path "$repos\infra\psmodule")) {
     Set-Location "$repos\infra\psmodules"
     git fetch
 }
+# git clone "git@github.com:aamitabhinfra/psmodules.git"
