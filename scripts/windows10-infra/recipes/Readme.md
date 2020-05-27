@@ -14,6 +14,11 @@ This recipe installs all packages.
    ```powershell
    Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-allapps.ps1'))
    ```
+## Recipe: AMITYOGA Lenovo 370
+This recipe installs Machine Learning packages.
+   ```powershell
+   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-amityoga.ps1'))
+   ```
 
 ## Recipe: ML as testing ground
 This recipe installs Machine Learning packages.
