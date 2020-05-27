@@ -1,5 +1,5 @@
 # Windows 10 Environment creation recipes
-Each recipe internally calls bootstrap.ps1 and Install-Base.txt vit BoxStarter
+Each recipe internally calls bootstrap.ps1 and Install-Base.txt via BoxStarter
 
 Bootstrapping script included the following packages: _Boxstarter_, _Chocolatey_, _Setup Network Discovery_ and _File Sharing_, _Git_, and download the main _"psmodule"_ Git repo
 
