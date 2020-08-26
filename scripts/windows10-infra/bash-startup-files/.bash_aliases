@@ -1,9 +1,5 @@
 # for K2FHPC desktop
-export PROJECTS_DIR="D:\Users\amitabh\Documents\BoxSync\Projects"
-export PRODUCTS_DIR="D:\Users\amitabh\Documents\BoxSync\Projects\AmitabhCo\products"
-export REPO_HOME=$HOMEPATH/source/repos
-alias cdp='cd $PROJECTS_DIR'
-alias cdpp='cd $PRODUCTS_DIR'
+export REPO_HOME=~/source/repos
 alias cdr='cd $REPO_HOME'
 
 # Git aliases
