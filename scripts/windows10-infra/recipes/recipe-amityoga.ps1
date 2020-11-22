@@ -7,6 +7,7 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw
 Write-Host "-----------------------------" -ForegroundColor Yellow
 Write-Host "Install Fonts" -ForegroundColor Yellow
 Write-Host "-----------------------------" -ForegroundColor Yellow
+# Reference: https://github.com/microsoft/cascadia-code/wiki/Installing-Cascadia-Code
 choco install -y cascadiafonts
 
 Write-Host "----------------------------" -ForegroundColor Yellow
