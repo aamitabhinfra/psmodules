@@ -4,6 +4,11 @@ Write-Host "-----------------------------------------" -ForegroundColor Yellow
 Set-ExecutionPolicy Unrestricted -Scope Process -Force
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/tasks/bootstrap.ps1'))
 
+Write-Host "-----------------------------" -ForegroundColor Yellow
+Write-Host "Install Fonts" -ForegroundColor Yellow
+Write-Host "-----------------------------" -ForegroundColor Yellow
+choco install -y cascadiafonts
+
 Write-Host "----------------------------" -ForegroundColor Yellow
 Write-Host "Install base applicaitons" -ForegroundColor Yellow
 Write-Host "----------------------------" -ForegroundColor Yellow
