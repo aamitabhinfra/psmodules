@@ -2,11 +2,4 @@
 test -f ~/.profile && . ~/.profile
 test -f ~/.bashrc && . ~/.bashrc
 
-# -------------------------------------------
-# Will install miniconda instead if conda
-# -------------------------------------------
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# export CONDA_AUTO_ACTIVATE_BASE=false; eval "$('/c/ProgramData/Anaconda3/Scripts/conda.exe' 'shell.bash' 'hook')"
-# <<< conda initialize <<<
 
