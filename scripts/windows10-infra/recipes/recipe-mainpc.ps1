@@ -24,15 +24,15 @@ Write-BoxstarterMessage "Inatalling WSL & Hyper-V, vagrant"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y Microsoft-Hyper-V-All -source windowsFeatures
 choco install vagrant
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
-Add-AppxPackage -Path ~/Ubuntu.appx
-RefreshEnv
-Ubuntu1804 install --root
-Ubuntu1804 run apt update
-Ubuntu1804 run apt upgrade
+# Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
+# Add-AppxPackage -Path ~/Ubuntu.appx
+# RefreshEnv
+# Ubuntu1804 install --root
+# Ubuntu1804 run apt update
+# Ubuntu1804 run apt upgrade
 
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
-Write-BoxstarterMessage "Inatalling Base applciations"
+Write-BoxstarterMessage "Inatalling Base applications"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y sysinternals
 choco install -y pdftk
@@ -52,17 +52,17 @@ choco install -y ccleaner
 choco install -y adobereader
 
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
-Write-BoxstarterMessage "Inatalling Security applciations"
+Write-BoxstarterMessage "Inatalling Security applications"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 # choco install -y 1password
 
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
-Write-BoxstarterMessage "Inatalling software development applciations"
+Write-BoxstarterMessage "Inatalling software development applications"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
-choco install -y anaconda3
+choco install miniconda3 -y --params="'/AddToPath:1'"
 
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
-Write-BoxstarterMessage "Inatalling Social, Collab, Audio, Video applciations"
+Write-BoxstarterMessage "Inatalling Social, Collab, Audio, Video applications"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y whatsapp
 choco install -y zoom-client
@@ -85,20 +85,20 @@ choco install -y boxsync
 choco install -y dropbox
 
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
-Write-BoxstarterMessage "Inatalling Photo applciations"
+Write-BoxstarterMessage "Inatalling Photo applications"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y imagemagick
 choco install -y irfanview
 
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
-Write-BoxstarterMessage "Inatalling benchmark applciations"
+Write-BoxstarterMessage "Inatalling benchmark applications"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y cinebench
 choco install -y coretemp
 choco install -y cpu-z
 
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
-Write-BoxstarterMessage "Inatalling Low Priority applciations"
+Write-BoxstarterMessage "Inatalling Low Priority applications"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y teamviewer
 choco install -y nodejs.install

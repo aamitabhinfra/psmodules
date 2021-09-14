@@ -10,26 +10,40 @@ Open powershell in admin mode and execute the following commands:
 
    # Define repository environment
    $env:REPO_HOME="d:\source\repos"
+
+   # Install GIT manually
    ```
 
-## Recipe: MAINPC: Uses _recipe-allapps.ps1_
-This recipe installs all packages.
+## Invoking Main Recipe
+
+   ### MAINPC
+   ```powershell
+   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-mainpc.ps1'))
+   ```
+
+   ### K2FHPC
    ```powershell
    Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-allapps.ps1'))
    ```
-## Recipe: K2FHPC: Uses _recipe-allapps.ps1_
-This recipe installs all packages.
-   ```powershell
-   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-allapps.ps1'))
-   ```
-## Recipe: AMITYOGA Lenovo 370
-This recipe installs Machine Learning packages.
+
+   ### AMITYOGA Lenovo 370
    ```powershell
    Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-amityoga.ps1'))
    ```
-
-## Recipe: ML as testing ground
-This recipe installs Machine Learning packages.
+   ### Recipe: ML as testing ground
    ```powershell
    Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-ml.ps1'))
    ```
+
+## Optional Post-Steps
+
+   ```powershell
+   # Setup passwordless GIT
+   ssh-keygen -t rsa -b 4096 -C "amitabh.arora@gmail.com"
+   eval "$(ssh-agent -s)"
+   cat ~/.ssh/id_rsa.pub | clip
+
+   # Install minocomda
+   choco install miniconda3 -y --params="'/AddToPath:1'"
+   ```
+
