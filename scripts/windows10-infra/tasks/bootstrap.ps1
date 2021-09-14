@@ -73,9 +73,12 @@ if (-not (Test-Path "$home\.bash_profile")) {
 }
 
 Write-Host "#####################################################" -ForegroundColor Yellow
-Write-Host "Generate ssh keys" -ForegroundColor Yellow
+Write-Host "Generate ssh keys for password-less GIT" -ForegroundColor Yellow
 Write-Host "#####################################################" -ForegroundColor Yellow
-
+if (-not (Test-Path "$home\.ssh\id_rsa")) {
+    ssh-keygen -t rsa -b 4096 -C "amitabh.arora@gmail.com"
+    eval "$(ssh-agent -s)"
+}
 
 Write-Host "#####################################################" -ForegroundColor Yellow
 Write-Host "Deprecated" -ForegroundColor Red
