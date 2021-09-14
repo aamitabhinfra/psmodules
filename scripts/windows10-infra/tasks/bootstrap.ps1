@@ -61,15 +61,12 @@ Write-Host "Download bash startup file" -ForegroundColor Yellow
 Write-Host "#####################################################" -ForegroundColor Yellow
 if (-not (Test-Path "$home\.bashrc")) {
     Invoke-WebRequest -Uri https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/bash-startup-files/.bashrc -OutFile "$home\.bashrc"
-    New-Item -Path "$home\.bashrc" -ItemType Directory
 }
 if (-not (Test-Path "$home\.bash_aliases")) {
     Invoke-WebRequest -Uri https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/bash-startup-files/.bash_aliases -OutFile "$home\.bash_aliases"
-    New-Item -Path "$home\.bash_aliases" -ItemType Directory
 }
 if (-not (Test-Path "$home\.bash_profile")) {
     Invoke-WebRequest -Uri https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/bash-startup-files/.bash_profile -OutFile "$home\.bash_profile"
-    New-Item -Path "$home\.bash_profile" -ItemType Directory
 }
 
 Write-Host "#####################################################" -ForegroundColor Yellow
