@@ -73,6 +73,11 @@ if (-not (Test-Path "$home\.bash_profile")) {
 }
 
 Write-Host "#####################################################" -ForegroundColor Yellow
+Write-Host "Generate ssh keys" -ForegroundColor Yellow
+Write-Host "#####################################################" -ForegroundColor Yellow
+
+
+Write-Host "#####################################################" -ForegroundColor Yellow
 Write-Host "Deprecated" -ForegroundColor Red
 Write-Host "Add git path to environment" -ForegroundColor Yellow
 Write-Host "#####################################################" -ForegroundColor Yellow
