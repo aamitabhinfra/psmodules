@@ -34,7 +34,7 @@ If (-Not (Test-Path "HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Adv
 }
 Set-ItemProperty -Path "HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" -Name PeopleBand -Type DWord -Value 0
 
-# Dark Theme for Windows (commenting out by default because this one's probbly a minority want)
+# Dark Theme for Windows (commenting out by default because this one's probably a minority want)
 # Note: the title bar text and such is still black with low contrast, and needs additional tweaks (it'll probably be better in a future build)
 Write-BoxstarterMessage "Turn ON Dark Mode"
 If (-Not (Test-Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize)) {

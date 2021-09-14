@@ -7,6 +7,9 @@ Bootstrapping script included the following packages: _Boxstarter_, _Chocolatey_
 Open powershell in admin mode and execute the following commands:
    ```powershell
    Set-ExecutionPolicy Unrestricted -Scope Process -Force
+
+   # Define repository environment
+   $env:REPO_HOME="d:\source\repos"
    ```
 
 ## Recipe: MAINPC: Uses _recipe-allapps.ps1_

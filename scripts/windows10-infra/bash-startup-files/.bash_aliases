@@ -1,5 +1,5 @@
-# for K2FHPC desktop
-export REPO_HOME=~/source/repos
+# No need for export.  Manually defined in PowerShell as the first step
+# export REPO_HOME=~/source/repos
 alias cdr='cd $REPO_HOME'
 
 # Git aliases

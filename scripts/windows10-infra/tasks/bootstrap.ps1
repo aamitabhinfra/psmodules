@@ -62,6 +62,7 @@ if (!($gitinpath)) {
     $env:path="$env:path;C:\Program Files\Git\cmd"
 }
 refreshenv
+
 # TODO: Setup .bashrc environment variables
 
 # TODO: Copy .ssh keys from host
@@ -69,7 +70,7 @@ refreshenv
 Write-Host "#####################################################" -ForegroundColor Yellow
 Write-Host "Pull down psmodule repo" -ForegroundColor Yellow
 Write-Host "#####################################################" -ForegroundColor Yellow
-$repos = "$home\source\repos"
+$repos = $env:REPO_HOME
 if (-not (Test-Path "$repos\infra")) {
     New-Item -Path "$repos\infra" -ItemType Directory
 }
