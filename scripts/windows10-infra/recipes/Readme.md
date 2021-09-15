@@ -1,5 +1,10 @@
 # Windows 10 Environment creation recipes
 
+## Manual Pre-Installs
+1. Google Chrome
+2. 1Password
+3. Box sync
+
 ## Boxstarter / Chocolatey / Firewall / Network Discovery & Git
 ```powershell
 Set-ExecutionPolicy Unrestricted -Scope Process -Force
