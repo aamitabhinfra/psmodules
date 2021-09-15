@@ -66,7 +66,7 @@ Write-BoxstarterMessage "Inatalling Social, Collab, Audio, Video applications"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y whatsapp
 choco install -y zoom-client
-choco install -y itunes
+# choco install -y itunes
 choco install -y audacity
 choco install -y audacity-lame
 choco install -y ffmpeg
@@ -81,8 +81,8 @@ Write-Host "------------------------------------------------------------" -Foreg
 Write-BoxstarterMessage "Inatalling Cloud drives"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y googledrive
-choco install -y boxsync
-choco install -y dropbox
+# choco install -y boxsync
+# choco install -y dropbox
 
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 Write-BoxstarterMessage "Inatalling Photo applications"
@@ -96,11 +96,13 @@ Write-Host "------------------------------------------------------------" -Foreg
 choco install -y cinebench
 choco install -y coretemp
 choco install -y cpu-z
+choco install -y cinebench
+choco install -y prime95
 
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 Write-BoxstarterMessage "Inatalling Low Priority applications"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
-choco install -y teamviewer
+# choco install -y teamviewer
 choco install -y nodejs.install
 choco install -y jdk8
 # choco install -y jre8
