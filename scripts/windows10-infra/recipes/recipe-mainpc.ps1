@@ -45,7 +45,7 @@ Write-BoxstarterMessage "Inatalling Social, Collab, Audio, Video applications"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y whatsapp
 choco install -y zoom-client
-# choco install -y itunes
+choco install -y itunes
 choco install -y audacity
 choco install -y audacity-lame
 choco install -y ffmpeg
