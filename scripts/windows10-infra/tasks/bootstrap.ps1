@@ -2,8 +2,7 @@
 
 ##################################################
 # The script will install Boxstarter, Chocolatey,
-# Setup Network Discovery and File Sharing, Git,
-# and download the main "psmodule" Git repo
+# Setup Network Discovery and File Sharing, Git
 ##################################################
 
 ###############################
