@@ -2,7 +2,7 @@ Write-Host "------------------------------------------------------------" -Foreg
 Write-BoxstarterMessage "Inatalling WSL & Hyper-V, vagrant"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 choco install -y Microsoft-Hyper-V-All -source windowsFeatures
-choco install vagrant
+choco install -y vagrant
 # Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
 # Add-AppxPackage -Path ~/Ubuntu.appx
 # RefreshEnv
@@ -30,9 +30,9 @@ choco install -y winrar
 choco install -y ccleaner
 choco install -y adobereader
 
-Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
-Write-BoxstarterMessage "Inatalling Security applications"
-Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
+# Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
+# Write-BoxstarterMessage "Inatalling Security applications"
+# Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 # choco install -y 1password
 
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
