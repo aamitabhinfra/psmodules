@@ -13,8 +13,7 @@ Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/aamitab
 
 ## Define REPO environment
 ```powershell
-$env:REPO_HOME="d:\source\repos"
-
+[System.Environment]::SetEnvironmentVariable('REPO_HOME', 'c:\source\repos', [System.EnvironmentVariableTarget]::User)
 ```
 
 ## Invoking Main Recipe
