@@ -54,6 +54,11 @@ Write-Host "#####################################################" -ForegroundCo
 Write-Host "Install Git Bash & Configure globals" -ForegroundColor Yellow
 Write-Host "#####################################################" -ForegroundColor Yellow
 choco install -y git -params '"/NoGuiHereIntegration"'
+$gitinpath = $env:path.split(";") | Select-String -Pattern git | Select-String -Pattern "program Files"
+if (!($gitinpath)) {
+    $env:path="$env:path;C:\Program Files\Git\cmd"
+}
+refreshenv
 git config --global user.name "aamitabh"
 git config --global user.email amitabh.arora@gmail.com
 
@@ -69,20 +74,6 @@ if (-not (Test-Path "$home\.bash_aliases")) {
 if (-not (Test-Path "$home\.bash_profile")) {
     Invoke-WebRequest -Uri https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/bash-startup-files/.bash_profile -OutFile "$home\.bash_profile"
 }
-
-Write-Host "#####################################################" -ForegroundColor Yellow
-Write-Host "Deprecated" -ForegroundColor Red
-Write-Host "Add git path to environment" -ForegroundColor Yellow
-Write-Host "#####################################################" -ForegroundColor Yellow
-# $gitinpath = $env:path.split(";") | Select-String -Pattern git | Select-String -Pattern "program Files"
-# if (!($gitinpath)) {
-#     $env:path="$env:path;C:\Program Files\Git\cmd"
-# }
-# refreshenv
-
-# TODO: Setup .bashrc environment variables
-
-# TODO: Copy .ssh keys from host
 
 Write-Host "#####################################################" -ForegroundColor Yellow
 Write-Host "Do this manually later" -ForegroundColor Red

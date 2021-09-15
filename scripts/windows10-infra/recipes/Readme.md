@@ -1,5 +1,10 @@
 # Windows 10 Environment creation recipes
-Each recipe internally calls bootstrap.ps1 and Install-Base.ps1 via BoxStarter
+
+## Install Boxstarter / Chocolatey & and essential Windows configs
+```powershell
+Set-ExecutionPolicy Unrestricted -Scope Process -Force
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/tasks/bootstrap.ps1'))
+```
 
 Bootstrapping script included the following packages: _Boxstarter_, _Chocolatey_, _Setup Network Discovery_ and _File Sharing_, _Git_, and download the main _"psmodule"_ Git repo
 
