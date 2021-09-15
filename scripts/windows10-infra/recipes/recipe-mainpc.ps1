@@ -1,12 +1,3 @@
-Write-Host "----------------------------" -ForegroundColor Yellow
-Write-Host "Install base applicaitons" -ForegroundColor Yellow
-Write-Host "----------------------------" -ForegroundColor Yellow
-Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/tasks/base.ps1
-
-Write-Host "-----------------------------" -ForegroundColor Yellow
-Write-Host "Install Applicaitons" -ForegroundColor Yellow
-Write-Host "-----------------------------" -ForegroundColor Yellow
-
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 Write-BoxstarterMessage "Inatalling WSL & Hyper-V, vagrant"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
