@@ -75,10 +75,10 @@ if (-not (Test-Path "$home\.bash_profile")) {
     Invoke-WebRequest -Uri https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/bash-startup-files/.bash_profile -OutFile "$home\.bash_profile"
 }
 
-Write-Host "#####################################################" -ForegroundColor Yellow
-Write-Host "Do this manually later" -ForegroundColor Red
-Write-Host "Pull down psmodule repo" -ForegroundColor Yellow
-Write-Host "#####################################################" -ForegroundColor Yellow
+# Write-Host "#####################################################" -ForegroundColor Yellow
+# Write-Host "Do this manually later" -ForegroundColor Red
+# Write-Host "Pull down psmodule repo" -ForegroundColor Yellow
+# Write-Host "#####################################################" -ForegroundColor Yellow
 # $repos = $env:REPO_HOME
 # if (-not (Test-Path "$repos\infra")) {
 #     New-Item -Path "$repos\infra" -ItemType Directory
