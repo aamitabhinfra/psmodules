@@ -70,14 +70,6 @@ if (-not (Test-Path "$home\.bash_profile")) {
 }
 
 Write-Host "#####################################################" -ForegroundColor Yellow
-Write-Host "Generate ssh keys for password-less GIT" -ForegroundColor Yellow
-Write-Host "#####################################################" -ForegroundColor Yellow
-if (-not (Test-Path "$home\.ssh\id_rsa")) {
-    ssh-keygen -t rsa -b 4096 -C "amitabh.arora@gmail.com"
-    eval "$(ssh-agent -s)"
-}
-
-Write-Host "#####################################################" -ForegroundColor Yellow
 Write-Host "Deprecated" -ForegroundColor Red
 Write-Host "Add git path to environment" -ForegroundColor Yellow
 Write-Host "#####################################################" -ForegroundColor Yellow
@@ -92,17 +84,18 @@ Write-Host "#####################################################" -ForegroundCo
 # TODO: Copy .ssh keys from host
 
 Write-Host "#####################################################" -ForegroundColor Yellow
+Write-Host "Do this manually later" -ForegroundColor Red
 Write-Host "Pull down psmodule repo" -ForegroundColor Yellow
 Write-Host "#####################################################" -ForegroundColor Yellow
-$repos = $env:REPO_HOME
-if (-not (Test-Path "$repos\infra")) {
-    New-Item -Path "$repos\infra" -ItemType Directory
-}
-if (!(Test-Path "$repos\infra\psmodule")) {
-    Set-Location "$repos\infra"
-    git clone "git@github.com:aamitabhinfra/psmodules.git"
-} else {
-    Set-Location "$repos\infra\psmodules"
-    git fetch
-}
+# $repos = $env:REPO_HOME
+# if (-not (Test-Path "$repos\infra")) {
+#     New-Item -Path "$repos\infra" -ItemType Directory
+# }
+# if (!(Test-Path "$repos\infra\psmodule")) {
+#     Set-Location "$repos\infra"
+#     git clone "git@github.com:aamitabhinfra/psmodules.git"
+# } else {
+#     Set-Location "$repos\infra\psmodules"
+#     git fetch
+# }
 # git clone "git@github.com:aamitabhinfra/psmodules.git"
