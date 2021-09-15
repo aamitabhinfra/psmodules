@@ -49,6 +49,7 @@ choco install -y itunes
 choco install -y audacity
 choco install -y audacity-lame
 choco install -y ffmpeg
+choco install -y mp3tag
 choco install -y mediainfo
 choco install -y spek
 choco install -y mkvtoolnix

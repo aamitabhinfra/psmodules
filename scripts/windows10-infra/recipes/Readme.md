@@ -81,3 +81,4 @@ Substitue the following string in the command below the table:
    6. Harmony Remote
    7. Bandicam
    8. exiftool
+   9. Microsoft Office
