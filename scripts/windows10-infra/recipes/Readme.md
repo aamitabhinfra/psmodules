@@ -73,5 +73,4 @@ Substitue the following string in the command below the table:
    ```
 
    ### Other manual application installs
-   1. Calibre
-   2. [JDK](https://www.oracle.com/java/technologies/downloads/)
+   1. [JDK](https://www.oracle.com/java/technologies/downloads/)
