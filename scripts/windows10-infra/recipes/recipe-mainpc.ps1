@@ -83,12 +83,12 @@ Write-BoxstarterMessage "Inatalling Low Priority applications"
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 # choco install -y teamviewer
 choco install -y nodejs.install
-choco install -y jdk8
+# choco install -y jdk8
 # choco install -y jre8
 # choco install -y discord.install
 # choco install -y discord
 choco install -y kindle
-choco install -y calibre
+# choco install -y calibre
 
 # May not work
 # choco install -y myharmony
