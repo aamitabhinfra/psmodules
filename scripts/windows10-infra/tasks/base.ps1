@@ -17,7 +17,7 @@ Write-BoxstarterMessage "Explorer Configuration"
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -DisableShowRibbon
 Disable-BingSearch
 Disable-GameBarTips
-Set-TaskbarOptions -Size Small -Lock -Dock Bottom -Combine Never
+# Set-TaskbarOptions -Size Small -Lock -Dock Bottom -Combine Never
 Enable-RemoteDesktop
 
 # These make "Quick Access" behave much closer to the old "Favorites"
