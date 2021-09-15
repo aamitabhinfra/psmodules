@@ -91,7 +91,7 @@ function removeApp {
 }
 $applicationList = @(
     "Microsoft.*3D*",
-    "Microsoft.*advertising*",
+    # "Microsoft.*advertising*",
     "Microsoft.Bing*",
     "Microsoft.CommsPhone",
     "Microsoft.Getstarted",
@@ -110,7 +110,7 @@ $applicationList = @(
     "Microsoft.WindowsPhone",
     "Microsoft.WindowsSoundRecorder",
     "microsoft.windowscommunicationsapps",
-    "Microsoft.Xbox*",
+    # "Microsoft.Xbox*",
     "Microsoft.Zune*",
     "king.com.*",
     "*disney*",
