@@ -22,7 +22,9 @@ Set-ExecutionPolicy Unrestricted -Scope Process -Force
 # Services requirements
 ###############################
 
+Write-Host "######################################################" -ForegroundColor Yellow
 Write-Host "Enable Services for Network Discovery and File Sharing" -ForegroundColor Yellow
+Write-Host "######################################################" -ForegroundColor Yellow
 if (!(Get-Service -DisplayName "Function Discovery Resource Publication")) {
     Get-Service -DisplayName "Function Discovery Resource Publication" | Start-Service
 }
@@ -40,16 +42,16 @@ Write-Host "#####################################################" -ForegroundCo
 Write-Host "Firewall requirements" -ForegroundColor Yellow
 Write-Host "#####################################################" -ForegroundColor Yellow
 
-Write-Host "Enable firewall for Network Discovery" -ForegroundColor Yellow
+Write-Host "####################################################" -ForegroundColor Yellow
+Write-Host "Enable firewall for Network Discovery / File Sharing" -ForegroundColor Yellow
+Write-Host "####################################################" -ForegroundColor Yellow
 Get-NetFirewallRule -DisplayGroup "Network Discovery" | Set-NetFirewallRule -Action Allow
 Get-NetFirewallRule -DisplayGroup "Network Discovery" | Enable-NetFirewallRule
-
-Write-Host "Enable firewall for File Sharing" -ForegroundColor Yellow
 Get-NetFirewallRule -DisplayGroup "File and Printer Sharing" | Set-NetFirewallRule -Action Allow 
 Get-NetFirewallRule -DisplayGroup "File and Printer Sharing" | Enable-NetFirewallRule
 
 Write-Host "#####################################################" -ForegroundColor Yellow
-Write-Host "Git Bash Setup" -ForegroundColor Yellow
+Write-Host "Install Git Bash & Configure globals" -ForegroundColor Yellow
 Write-Host "#####################################################" -ForegroundColor Yellow
 choco install -y git -params '"/NoGuiHereIntegration"'
 git config --global user.name "aamitabh"

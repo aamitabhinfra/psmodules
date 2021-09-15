@@ -37,13 +37,28 @@ Open powershell in admin mode and execute the following commands:
 
 ## Optional Post-Steps
 
+   ### Password-less Github access
    ```powershell
    # Setup passwordless GIT
    ssh-keygen -t rsa -b 4096 -C "amitabh.arora@gmail.com"
    eval "$(ssh-agent -s)"
    cat ~/.ssh/id_rsa.pub | clip
+   ....copy clipboard to github ...
+   ```
+   
+   ### Windows Terminal from Store
 
-   # Install minocomda
+   ### WSL
+   [Simplified Installation for Windows Insiders](https://docs.microsoft.com/en-us/windows/wsl/install-win10#simplified-installation-for-windows-insiders):
+   1. Open an elevated command prompt
+   2. Execute "```wsl --install```" command
+
+   ### Docker Desktop
+   1. Install from Docker Hub
+   2. Reboot
+   3. Enable WSL integration
+   ### Miniconda3
+   ``` powershell
    choco install miniconda3 -y --params="'/AddToPath:1'"
    ```
 
