@@ -19,7 +19,7 @@ choco install -y putty
 choco install -y SublimeText3
 # choco install -y SublimeText3.PackageControl
 choco install -y googlechrome
-choco install -y syncbackfree
+choco install -y syncbackfree --ignore-checksums
 # choco install -y onenote
 choco install -y firefox
 choco install -y windirstat
@@ -88,7 +88,7 @@ choco install -y nodejs.install
 # choco install -y discord.install
 # choco install -y discord
 choco install -y kindle
-# choco install -y calibre
+choco install -y calibre
 
 # May not work
 # choco install -y myharmony
