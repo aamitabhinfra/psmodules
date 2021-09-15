@@ -6,6 +6,7 @@
 ```
 
 ## Fix long path error
+[Reference Thread Link](https://github.com/Microsoft/dotnet/issues/234#issuecomment-849373175):
 Setting Enable Win32 long paths policy in Group Policy editor produced a working workaround.
 
 1. Click the Window key and type gpedit.msc, then press the Enter key. This launches the _Local Group Policy Editor_
