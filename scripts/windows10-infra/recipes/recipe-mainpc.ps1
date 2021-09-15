@@ -1,15 +1,3 @@
-Write-Host "-----------------------------------------" -ForegroundColor Yellow
-Write-Host "Install bootstrap: Boxstarter/Choco, etc." -ForegroundColor Yellow
-Write-Host "-----------------------------------------" -ForegroundColor Yellow
-Set-ExecutionPolicy Unrestricted -Scope Process -Force
-Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/tasks/bootstrap.ps1'))
-
-Write-Host "-----------------------------" -ForegroundColor Yellow
-Write-Host "Install Fonts" -ForegroundColor Yellow
-Write-Host "-----------------------------" -ForegroundColor Yellow
-# Reference: https://github.com/microsoft/cascadia-code/wiki/Installing-Cascadia-Code
-choco install -y cascadiafonts
-
 Write-Host "----------------------------" -ForegroundColor Yellow
 Write-Host "Install base applicaitons" -ForegroundColor Yellow
 Write-Host "----------------------------" -ForegroundColor Yellow
@@ -107,7 +95,7 @@ choco install -y nodejs.install
 choco install -y jdk8
 # choco install -y jre8
 # choco install -y discord.install
-choco install -y discord
+# choco install -y discord
 choco install -y kindle
 choco install -y calibre
 

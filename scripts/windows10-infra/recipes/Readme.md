@@ -1,43 +1,34 @@
 # Windows 10 Environment creation recipes
 
-## Install Boxstarter / Chocolatey & and essential Windows configs
+## Boxstarter / Chocolatey / Firewall / Network Discovery & Git
 ```powershell
 Set-ExecutionPolicy Unrestricted -Scope Process -Force
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/tasks/bootstrap.ps1'))
 ```
 
-Bootstrapping script included the following packages: _Boxstarter_, _Chocolatey_, _Setup Network Discovery_ and _File Sharing_, _Git_, and download the main _"psmodule"_ Git repo
+## Base Windows configuration
+```powershell
+Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/tasks/Install-Base.ps1
+```
 
-## Pre-Requisite step for all recipes
-Open powershell in admin mode and execute the following commands:
-   ```powershell
-   Set-ExecutionPolicy Unrestricted -Scope Process -Force
+## Define REPO environment
+```powershell
+$env:REPO_HOME="d:\source\repos"
 
-   # Define repository environment
-   $env:REPO_HOME="d:\source\repos"
-
-   # Install GIT manually
-   ```
+```
 
 ## Invoking Main Recipe
+Substitue the following string in the command below the table:
+   computer             | script
+   --------             | -----------
+   MAINPC               | mainpc
+   K2FHPC               | allapps
+   AMITYOGA Lenovo 370  | amityoga
+   AMITYOGA temp        | amityogatemp
+   ML                   | ml
 
-   ### MAINPC
    ```powershell
-   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-mainpc.ps1'))
-   ```
-
-   ### K2FHPC
-   ```powershell
-   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-allapps.ps1'))
-   ```
-
-   ### AMITYOGA Lenovo 370
-   ```powershell
-   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-amityoga.ps1'))
-   ```
-   ### Recipe: ML as testing ground
-   ```powershell
-   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-ml.ps1'))
+   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-{script}.ps1'))
    ```
 
 ## Optional Post-Steps

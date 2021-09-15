@@ -91,3 +91,10 @@ if (-not (Test-Path "$home\.bash_profile")) {
 #     git fetch
 # }
 # git clone "git@github.com:aamitabhinfra/psmodules.git"
+
+Write-Host "#####################################################" -ForegroundColor Yellow
+Write-Host "Install Fonts" -ForegroundColor Yellow
+Write-Host "#####################################################" -ForegroundColor Yellow
+# Reference: https://github.com/microsoft/cascadia-code/wiki/Installing-Cascadia-Code
+choco install -y cascadiafonts
+
