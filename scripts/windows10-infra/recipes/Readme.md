@@ -8,7 +8,7 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw
 
 ## Base Windows configuration
 ```powershell
-Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/tasks/Install-Base.ps1
+Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/tasks/base.ps1
 ```
 
 ## Define REPO environment
