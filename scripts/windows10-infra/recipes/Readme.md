@@ -74,3 +74,9 @@ Substitue the following string in the command below the table:
 
    ### Other manual application installs
    1. [JDK](https://www.oracle.com/java/technologies/downloads/)
+   2. Capture NX 2
+   3. dbpoweramp
+   4. Epson Scan
+   5. geosetter
+   6. Harmony Remote
+   7. Bandicam

@@ -85,8 +85,6 @@ Write-Host "------------------------------------------------------------" -Foreg
 choco install -y nodejs.install
 # choco install -y jdk8
 # choco install -y jre8
-# choco install -y discord.install
-# choco install -y discord
 choco install -y kindle
 choco install -y calibre
 
