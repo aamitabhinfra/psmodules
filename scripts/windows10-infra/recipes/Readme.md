@@ -18,10 +18,13 @@ Set the policy state to _Enabled_
 1. Google Chrome
 2. 1Password
 3. Box sync
+4. Fix Taskbar setting manually
 
 ## Boxstarter / Chocolatey / Firewall / Network Discovery & Git
 ```powershell
 Set-ExecutionPolicy Unrestricted -Scope Process -Force
+```
+```powershell
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/tasks/bootstrap.ps1'))
 ```
 
@@ -48,25 +51,25 @@ Substitue the following string in the command below the table:
 
    ### Password-less Github access
    ```powershell
-   # Setup passwordless GIT
    ssh-keygen -t rsa -b 4096 -C "amitabh.arora@gmail.com"
    eval "$(ssh-agent -s)"
    cat ~/.ssh/id_rsa.pub | clip
    ....copy clipboard to github ...
    ```
    
-   ### Windows Terminal from Store
-
-   ### WSL
-   [Simplified Installation for Windows Insiders](https://docs.microsoft.com/en-us/windows/wsl/install-win10#simplified-installation-for-windows-insiders):
-   1. Open an elevated command prompt
-   2. Execute "```wsl --install```" command
+   ### Windows Terminal
+      Install from Windows Store
 
    ### Docker Desktop
    1. Install from Docker Hub
    2. Reboot
    3. Enable WSL integration
    
+   ### WSL
+   [Simplified Installation for Windows Insiders](https://docs.microsoft.com/en-us/windows/wsl/install-win10#simplified-installation-for-windows-insiders):
+   1. Open an elevated command prompt
+   2. Execute "```wsl --install```" command
+
    ### Miniconda3
    ``` powershell
    choco install miniconda3 -y --params="'/AddToPath:1'"
