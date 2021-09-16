@@ -1,5 +1,5 @@
 # Define external switch name
-$AcoExternalSwitchName = "ExternalVirtualSwitch"
+$AcoExternalSwitchName = "External Virtual Switch"
 
 function Add-AcoExternalSwitch {
 
