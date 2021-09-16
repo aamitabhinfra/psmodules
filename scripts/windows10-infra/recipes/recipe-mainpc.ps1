@@ -78,6 +78,7 @@ choco install -y coretemp
 choco install -y cpu-z
 choco install -y cinebench
 choco install -y prime95
+choco install -y as-ssd
 
 Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 Write-BoxstarterMessage "Inatalling Low Priority applications"
