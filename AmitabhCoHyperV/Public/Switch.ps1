@@ -31,6 +31,7 @@ function Add-AcoExternalSwitch {
 
         Write-Host "Info: Renaming External Switch from '$($ExternalSwitch.Name)' to '$AcoExternalSwitchName'" -ForegroundColor Green
         Rename-VMSwitch $ExternalSwitch.Name -NewName $AcoExternalSwitchName
+        return
     }
 
     # If there is no need to create external switch then done
