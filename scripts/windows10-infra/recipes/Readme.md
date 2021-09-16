@@ -47,8 +47,10 @@ Substitue the following string in the command below the table:
    Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/aamitabhinfra/psmodules/master/scripts/windows10-infra/recipes/recipe-{script}.ps1'))
    ```
 
-## Optional Post-Steps
+## Post Manual Steps
 
+   ### Enable Hyper-V VMs to have LAN network access
+   See the link: [Share Your Network Connection with Hyper-V in Windows 10](https://www.groovypost.com/howto/share-an-ethernet-or-wireless-network-connection-with-hyper-v-in-windows-10/)
    ### Password-less Github access
    ```powershell
    ssh-keygen -t rsa -b 4096 -C "amitabh.arora@gmail.com"
