@@ -49,7 +49,6 @@ function Add-AcoExternalSwitch {
     # Create a new External Switch
     $NetAdapterName = $NetAdapter.Name
     New-VMSwitch $AcoExternalSwitchName  -NetAdapterName $NetAdapterName -AllowManagementOS $true
-    return
 }
 
 function Remove-AcoExternalSwitch {
