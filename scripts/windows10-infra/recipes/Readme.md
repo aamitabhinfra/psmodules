@@ -81,8 +81,8 @@ Substitue the following string in the command below the table:
    1. [JDK](https://www.oracle.com/java/technologies/downloads/)
    2. Capture NX 2, Capture NX-D
    3. dbpoweramp
-   4. Epson Scan
-   5. geosetter
+   4. Epson Scan, and configure the settings from old computer
+   5. Geosetter
    6. Harmony Remote
    7. Bandicam
    8. exiftool
