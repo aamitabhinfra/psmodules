@@ -8,13 +8,13 @@ function New-AcoVM {
         [Parameter(Mandatory)]
         [string]$Name,
 
-        [Parameter(Mandatory=$false)]
+        [Parameter(Mandatory=$true)]
         [Int64]$RAM = 8GB, # Gitabyter
 
-        [Parameter(Mandatory=$false)]
+        [Parameter(Mandatory=$true)]
         [int]$CPU = 2,
 
-        [Parameter(Mandatory=$false)]
+        [Parameter(Mandatory=$true)]
         [string]$ISO
 
     )
