@@ -43,6 +43,9 @@ alias docosta='docker container start'
 alias docosto='docker container stop'
 alias docostats='docker container stats'
 alias docotop='docker container top'
+#   System aliases
+alias dosysdf='docker system df'
+alias dosyspru='docker system prune'
 
 # Conda aliases
 alias col='conda env list'
