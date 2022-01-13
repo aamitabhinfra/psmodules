@@ -15,6 +15,9 @@ alias az='az.cmd'
 alias python='winpty python.exe'
 alias sqlite3='winpty sqlite3.exe'
 
+# Docker aliases
+alias dkimbui='docker image build'
+
 # Conda aliases
 alias col='conda env list'
 coa() { conda activate "$1"; }
