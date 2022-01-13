@@ -16,6 +16,17 @@ alias python='winpty python.exe'
 alias sqlite3='winpty sqlite3.exe'
 
 # Docker aliases
+#   Image aliases
+alias dkimbui='docker image build'
+alias dkimhis='docker image history'
+alias dkimins='docker image inspect'
+alias dkimls='docker image ls'
+alias dkimpru='docker image prune'
+alias dkimpus='docker image push'
+alias dkimpul='docker image pull'
+alias dkimrm='docker image rm'
+alias dkimtag='docker image tag'
+#   Container aliases
 alias dkimbui='docker image build'
 
 # Conda aliases
