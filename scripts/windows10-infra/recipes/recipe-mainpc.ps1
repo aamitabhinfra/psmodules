@@ -76,6 +76,8 @@ Write-Host "------------------------------------------------------------" -Foreg
 choco install -y cinebench
 choco install -y coretemp
 choco install -y cpu-z
+choco install -y gpu-z
+choco install -y msiafterburner
 choco install -y cinebench
 choco install -y prime95
 choco install -y as-ssd
