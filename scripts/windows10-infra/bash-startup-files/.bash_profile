@@ -21,4 +21,5 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 . "$HOME/.cargo/env"
 
+# Autostart docker when WSL starts
 wsl.exe -u root -e sh -c "service docker status > /dev/null || service docker start"
