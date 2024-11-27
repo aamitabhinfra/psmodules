@@ -19,7 +19,7 @@ choco install -y putty
 choco install -y SublimeText3
 # choco install -y SublimeText3.PackageControl
 choco install -y googlechrome
-choco install -y syncbackfree --ignore-checksums
+# choco install -y syncbackfree --ignore-checksums
 # choco install -y onenote
 choco install -y firefox
 choco install -y windirstat
@@ -28,7 +28,7 @@ choco install -y vscode
 choco install -y 7zip
 choco install -y winrar
 choco install -y ccleaner
-choco install -y adobereader
+# choco install -y adobereader
 
 # Write-Host "------------------------------------------------------------" -ForegroundColor Yellow
 # Write-BoxstarterMessage "Inatalling Security applications"
